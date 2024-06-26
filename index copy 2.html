@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmilingZH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
+    <link rel="shortcut icon" href="img/logo2_1.png">
+    <style>
+        .js {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            /* margin-left: 20vh; */
+        }
+
+        .js-sm {
+            margin-left: 20vh;
+            margin-top: 10vh;
+        }
+
+        .tx {
+            margin-right: vh;
+            margin-top: 10vh;
+        }
+    </style>
+    <style>
+        html {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        * {
+            /* border: 1px solid black; */
+            padding: 0;
+            margin: 0;
+            /* overflow: hidden; */
+            /* margin: 2px; */
+        }
+
+        body {
+            background-image: linear-gradient(90deg, #D2DEED, #F4DBC7);
+        }
+
+        /* 主div样式，背景颜色 */
+        /* .div {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; 
+    background-image: linear-gradient(90deg, #D2DEED, #F4DBC7);
+} */
+
+        /* 头部栏 */
+        .header {
+            height: 15vh;
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            flex: 1;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 200px;
+            transition: 0.5s;
+        }
+
+        /* 头部栏中的导航栏 */
+        .daohang {
+            display: flex;
+            flex: 3;
+            margin: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .daohang ul {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .daohang ul li {
+            margin: 25px;
+            list-style: none;
+            transition: 0.5s;
+        }
+
+        .daohang ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #262626;
+            transition: 0.3s;
+        }
+
+        .touxiang {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .touxiang h2 {
+            text-transform: uppercase;
+            font-size: 16px;
+            color: #262626;
+            position: relative;
+            left: -12px;
+        }
+
+        .touxiang img {
+            width: 80px;
+            /*头像旋转*/
+            animation: touxiangrotate 6s linear infinite;
+        }
+    </style>
+    <style>
+        /* 二维码，默认隐藏，当鼠标悬停图标时显示 */
+        .m {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 10vh;
+            /* flex-direction: column; */
+        }
+
+        .erweimaqq {
+            position: absolute;
+            top: 20vh;
+            left: 25vh;
+            z-index: 2;
+            display: none;
+            width: 200px;
+            margin-left: 10vh;
+            margin-right: 10vh;
+        }
+
+        .erweimaweixin {
+            position: absolute;
+            top: 20vh;
+            left: 72.5vh;
+            z-index: 2;
+            display: none;
+            width: 200px;
+            margin-left: 10vh;
+            margin-right: 10vh;
+        }
+
+        .erweimabilibili {
+            position: absolute;
+            top: 25vh;
+            right: 25vh;
+            z-index: 2;
+            display: none;
+            width: 200px;
+            margin-left: 10vh;
+            margin-right: 10vh;
+        }
+
+        .tubiao {
+            display: flex;
+            /* flex-direction: column; */
+            /* position: absolute; */
+            /* justify-content: center; */
+            justify-self: center;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: 20vh;
+            /* right: 5vh; */
+            font-size: 14px;
+            color: #262626;
+            z-index: 2;
+
+        }
+
+        .tubiao a {
+            text-decoration: none;
+        }
+
+        .tubiao i {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid rgb(55, 55, 55);
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            /* margin: 20vh; */
+            margin-left: 20vh;
+            margin-right: 20vh;
+            font-size: 25px;
+        }
+
+        .qq {
+            color: rgb(28, 28, 28);
+        }
+
+        .weixin {
+            color: rgb(28, 28, 28);
+        }
+
+        .bilibili {
+            color: rgb(28, 28, 28);
+        }
+
+        .qq:hover {
+            background-color: #22a5f1;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .weixin:hover {
+            background-color: #32b043;
+            color: #fff;
+            transition: 0.5s;
+        }
+
+        .bilibili:hover {
+            background-color: #ec80b6;
+            color: #fff;
+            transition: 0.5s;
+        }
+    </style>
+    <style>
+        @media(max-width:1300px) {
+            .zuopin {
+                left: 32vh;
+            }
+        }
+
+
+        @media(max-width:1200px) {
+            .zuopin {
+                left: 32vh;
+            }
+
+            .slideInfo p {
+                max-width: 300px;
+                transition: 0.5s;
+            }
+        }
+
+        @media(max-width:1100px) {
+            .slideInfo {
+                left: 12vh;
+                transition: 0.5s;
+            }
+
+            .zuopin {
+                left: 28vh;
+            }
+
+            .slideInfo p {
+                max-width: 250px;
+                transition: 0.5s;
+            }
+        }
+
+        @media(max-width:1000px) {
+            .zuopin {
+                left: 16vh;
+            }
+        }
+
+        @media (max-width:920px) {
+            .daohang ul li {
+                margin: 20px;
+                list-style: none;
+                transition: 0.5s;
+            }
+
+            .logo img {
+                width: 150px;
+                transition: 0.5s;
+            }
+
+            .touxiang img {
+                width: 60px;
+                transition: 0.5s;
+            }
+
+
+
+            .slideInfo {
+
+                left: 12vh;
+                transition: 0.5s;
+            }
+
+            .slideInfo h2 {
+                font-size: 26px;
+                transition: 0.5s;
+            }
+
+            .slideInfo h1 {
+                font-size: 32px;
+                transition: 0.5s;
+            }
+
+            .slideInfo .gengduo a {
+                padding: 10px 35px;
+                border-radius: 35px;
+                font-size: 15px;
+            }
+
+            .zuopin {
+                left: 16vh;
+            }
+        }
+
+        @media(max-width:800px) {
+            .zuopin {
+                left: 15vh;
+            }
+
+            .zuopin img {
+                width: 230px;
+                transition: 0.5s;
+            }
+        }
+
+        @media(max-width:650px) {
+            .slideInfo p {
+                max-width: 200px;
+                transition: 0.5s;
+            }
+
+            .zuopin {
+                left: 13vh;
+            }
+
+
+        }
+
+        @media (max-width:600px) {
+            .yincang {
+                display: none;
+            }
+
+            .daohang {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: end;
+            }
+
+            .logo img {
+                width: 100px;
+                transition: 0.5s;
+            }
+
+            .slideInfo {
+
+                left: 5vh;
+                transition: 0.5s;
+            }
+
+            .slideInfo h2 {
+                font-size: 22px;
+                transition: 0.5s;
+            }
+
+            .slideInfo h1 {
+                font-size: 26px;
+                transition: 0.5s;
+            }
+
+            .zuopin {
+                left: 10vh;
+            }
+        }
+
+        @media(max-width:550px) {
+
+            .slideInfo p {
+                display: none;
+                transition: 0.5s;
+            }
+
+            .slideInfo .gengduo {
+                top: 80px;
+                transition: 0.5s;
+            }
+
+            .slideInfo .gengduo a {
+                padding: 8px 28px;
+                border-radius: 28px;
+                font-size: 12px;
+            }
+        }
+
+        @media(max-width:500px) {
+            .zuopin {
+                left: 8vh;
+            }
+
+        }
+
+        @media(max-width:450px) {
+            .daohang ul li {
+                margin: 15px;
+                list-style: none;
+                transition: 0.5s;
+            }
+
+            .logo img {
+                width: 80px;
+                transition: 0.5s;
+            }
+
+            .slideInfo {
+
+                left: 2vh;
+                transition: 0.5s;
+            }
+
+            .slideInfo h2 {
+                font-size: 20px;
+                transition: 0.5s;
+            }
+
+            .slideInfo h1 {
+                font-size: 24px;
+                transition: 0.5s;
+            }
+
+            .zuopin {
+                left: 3vh;
+            }
+        }
+
+        @media(max-width:400px) {
+            .slideInfo {
+
+                left: 1vh;
+                transition: 0.5s;
+            }
+
+            .zuopin {
+                left: 2vh;
+            }
+
+            .zuopin img {
+                width: 200px;
+                transition: 0.5s;
+            }
+        }
+
+        @media(max-width:360px) {
+            .slideInfo {
+
+                left: 1vh;
+                transition: 0.5s;
+            }
+
+            .zuopin {
+                left: 2vh;
+            }
+
+            .zuopin img {
+                width: 160px;
+                transition: 0.5s;
+            }
+
+            .slideInfo .gengduo a {
+                padding: 6px 24px;
+                border-radius: 24px;
+                font-size: 12px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部栏 -->
+    <header class="header">
+        <!-- LOGO -->
+        <div class="logo"><img src="img/logo.png" alt="LOGO"></div>
+        <!-- 导航栏 -->
+        <!-- 名字、头像 -->
+        <!-- <div class="touxiang yincang">
+            <h2>SmilingZH</h2>
+            <img src="img/touxiang.png" alt="头像">
+        </div> -->
+        <div class="daohang" style="display: flex;flex: 1;justify-self: center;">
+            <ul>
+                <li><a href="index copy.html">主页</a></li>
+                <li><a href="index.html">作品</a></li>
+                <li><a href="">联系</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- 图标 -->
+    <div class="tubiao yincang">
+        <a href=""><i class="qq fa-brands fa-qq"></i></a>
+        <a href=""><i class="weixin fa-brands fa-weixin"></i></a>
+        <a href=""><i class="bilibili fa-brands fa-bilibili"></i></a>
+    </div>
+    <!-- 二维码，默认隐藏 -->
+    <div class="m">
+        <img class="erweimaqq" src="img/qq.png" alt="qq">
+        <img class="erweimaweixin" src="img/weixin.png" alt="微信">
+        <img class="erweimabilibili" src="img/bilibili.png" alt="B站">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+    <script>
+        let animation = anime({
+            targets: "header",
+            translateX: [180, 0],
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeInOutSine',
+        });
+        anime({
+            targets: ".tubiao",
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeInOutSine',
+            delay: 300
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var qq = document.querySelector('.qq');
+            var weixin = document.querySelector('.weixin');
+            var bilibili = document.querySelector('.bilibili');
+            var erweimaqq = document.querySelector('.erweimaqq');
+            var erweimaweixin = document.querySelector('.erweimaweixin');
+            var erweimabilibili = document.querySelector('.erweimabilibili');
+
+            qq.addEventListener('mouseover', function () {
+                erweimaqq.style.display = 'flex';
+            });
+            weixin.addEventListener('mouseover', function () {
+                erweimaweixin.style.display = 'flex';
+            });
+            bilibili.addEventListener('mouseover', function () {
+                erweimabilibili.style.display = 'flex';
+            });
+
+            qq.addEventListener('mouseout', function () {
+                erweimaqq.style.display = 'none';
+            });
+            weixin.addEventListener('mouseout', function () {
+                erweimaweixin.style.display = 'none';
+            });
+            bilibili.addEventListener('mouseout', function () {
+                erweimabilibili.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

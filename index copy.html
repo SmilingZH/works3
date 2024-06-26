@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmilingZH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="img/logo2_1.png">
+    <style>
+        .js {
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            /* margin-left: 20vh; */
+        }
+
+        .js-sm {
+            margin-left: 20vh;
+            margin-top: 10vh;
+        }
+
+        .tx {
+            margin-right: vh;
+            margin-top: 10vh;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部栏 -->
+    <header class="header">
+        <!-- LOGO -->
+        <div class="logo"><img src="img/logo.png" alt="LOGO"></div>
+        <!-- 导航栏 -->
+        <!-- 名字、头像 -->
+        <!-- <div class="touxiang yincang">
+            <h2>SmilingZH</h2>
+            <img src="img/touxiang.png" alt="头像">
+        </div> -->
+        <div class="daohang" style="display: flex;flex: 1;justify-self: center;">
+            <ul>
+                <li><a href="">主页</a></li>
+                <li><a href="index.html">作品</a></li>
+                <li><a href="index copy 2.html">联系</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="js">
+        <div class="tx">
+            <img src="img/头像.jpg" alt="头像" width="300px" height="350px">
+        </div>
+        <div class="js-sm">
+            <h2>张竣</h2>
+            <p>就读于黄淮学院，艺术设计学院视觉传达设计专业，<br>主修课程：设计基础，ui交互设计，web前端</p>
+            <p>对web前端课程感兴趣，目前了解html，css基础知识，js还在学习中</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- <script src="js/index.js"></script> -->
+    <script>
+        let animation = anime({
+            targets: "header",
+            translateX: [180, 0],
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeInOutSine',
+        });
+        anime({
+            targets: ".js",
+            opacity: [0, 1],
+            duration: 800,
+            easing: 'easeInOutSine',
+            delay: 300
+        });
+    </script>
+</body>
+
+</html>
